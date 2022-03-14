@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CL.Server.Domain\**" />
+    <Compile Remove="CL.Server.Middleware\**" />
+    <Content Remove="CL.Server.Domain\**" />
+    <Content Remove="CL.Server.Middleware\**" />
+    <EmbeddedResource Remove="CL.Server.Domain\**" />
+    <EmbeddedResource Remove="CL.Server.Middleware\**" />
+    <None Remove="CL.Server.Domain\**" />
+    <None Remove="CL.Server.Middleware\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="CL.Server.Domain\CL.Server.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

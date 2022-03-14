@@ -1,0 +1,634 @@
+2022-03-14 06:49:51.626 -05:00 [INF] Unable to connect to any of the specified MySQL hosts.
+2022-03-14 06:49:51.728 -05:00 [INF]    at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, Int32 startTickCount, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 413
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(String logMessage, Int32 startTickCount, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 368
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 107
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 137
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 863
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 414
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 380
+   at Microsoft.EntityFrameworkCore.ServerVersion.AutoDetect(String connectionString)
+   at CL.Server.Middleware.Model.Context.PSDBContext.OnConfiguring(DbContextOptionsBuilder optionsBuilder) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Model\Context\PSDBContext.cs:line 20
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at CL.Server.Domain.Users.Data.UsersRepository.GetUser(String login, String pass) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\Data\UsersRepository.cs:line 29
+   at CL.Server.Domain.Users.UsersManager.UserInfoData(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 61
+   at ticket.Controllers.PersonsController.GetUserInfo(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 33
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 06:50:07.149 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 06:50:07.202 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.UserInfoData(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 65
+   at ticket.Controllers.PersonsController.GetUserInfo(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 33
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 06:52:45.990 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 06:52:45.990 -05:00 [INF]    at CL.Server.Domain.Persons.PersonsManager.AddPerson(UserCreationData user, PSDBContext context) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Persons\PersonsManager.cs:line 57
+   at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 31
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method14(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 06:52:53.053 -05:00 [INF] An error occurred while updating the entries. See the inner exception for details.
+2022-03-14 06:52:53.055 -05:00 [INF]    at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at CL.Server.Domain.Persons.Data.PersonsRepository.AddPerson(person personEntity, PSDBContext context) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Persons\Data\PersonsRepository.cs:line 17
+   at CL.Server.Domain.Persons.PersonsManager.AddPerson(UserCreationData user, PSDBContext context) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Persons\PersonsManager.cs:line 69
+   at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 31
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method14(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 07:07:20.058 -05:00 [INF] An error occurred while updating the entries. See the inner exception for details.
+2022-03-14 07:07:20.111 -05:00 [INF]    at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at CL.Server.Domain.Persons.Data.PersonsRepository.AddPerson(person personEntity, PSDBContext context) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Persons\Data\PersonsRepository.cs:line 17
+   at CL.Server.Domain.Persons.PersonsManager.AddPerson(UserCreationData user, PSDBContext context) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Persons\PersonsManager.cs:line 69
+   at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 31
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 07:12:46.873 -05:00 [INF] An error occurred while updating the entries. See the inner exception for details.
+2022-03-14 07:12:46.927 -05:00 [INF]    at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at CL.Server.Domain.Persons.Data.PersonsRepository.AddPerson(person personEntity, PSDBContext context) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Persons\Data\PersonsRepository.cs:line 17
+   at CL.Server.Domain.Persons.PersonsManager.AddPerson(UserCreationData user, PSDBContext context) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Persons\PersonsManager.cs:line 69
+   at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 31
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method35(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 07:19:52.148 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 07:19:52.202 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData creation) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 47
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method35(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 07:20:38.747 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 07:20:38.799 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData creation) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 47
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 07:21:58.868 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 07:21:58.919 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData creation) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 47
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 07:22:13.019 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 07:22:13.019 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData creation) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 47
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 07:22:46.477 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 07:22:46.530 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData creation) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 47
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 07:24:22.216 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 07:24:22.266 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 47
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 07:25:20.517 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 07:25:20.518 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 47
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 07:25:37.267 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 07:25:37.267 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.UserInfoData(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 73
+   at ticket.Controllers.PersonsController.GetUserInfo(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 33
+   at lambda_method127(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 11:06:49.162 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 11:06:49.231 -05:00 [INF]    at CL.Server.Domain.Persons.PersonsManager.AddPerson(UserCreationData user, PSDBContext context) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Persons\PersonsManager.cs:line 52
+   at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 27
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 11:09:04.962 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 11:09:04.962 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 43
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 11:43:17.189 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 11:43:17.189 -05:00 [INF]    at CL.Server.Domain.Persons.PersonsManager.AddPerson(UserCreationData user, PSDBContext context) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Persons\PersonsManager.cs:line 27
+   at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 27
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 11:59:03.953 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 11:59:03.954 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 43
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 11:59:32.297 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 11:59:32.298 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 43
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 11:59:53.187 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 11:59:53.187 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 43
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:00:55.727 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:00:55.728 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 43
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:01:20.000 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:01:20.001 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 43
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:03:10.187 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:03:10.187 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 43
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:03:58.648 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:03:58.648 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 43
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:05:10.385 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:05:10.386 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 43
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:09:36.363 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:09:36.363 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.UserInfoData(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 69
+   at ticket.Controllers.PersonsController.GetUserInfo(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 33
+   at lambda_method128(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:19:53.486 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:19:53.486 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 43
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:20:30.654 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:20:30.654 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.AddUser(UserCreationData userData) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 43
+   at ticket.Controllers.PersonsController.AddUser(UserCreationData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 26
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:22:25.394 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:22:25.394 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.UserInfoData(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 69
+   at ticket.Controllers.PersonsController.GetUserInfo(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 33
+   at lambda_method128(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:22:40.550 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:22:40.550 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.UserInfoData(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 69
+   at ticket.Controllers.PersonsController.GetUserInfo(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 33
+   at lambda_method128(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:22:48.156 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:22:48.157 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.UserInfoData(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 69
+   at ticket.Controllers.PersonsController.GetUserInfo(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 33
+   at lambda_method128(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:23:24.223 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:23:24.223 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.UserInfoData(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Domain\Users\UsersManager.cs:line 69
+   at ticket.Controllers.PersonsController.GetUserInfo(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 33
+   at lambda_method128(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
+2022-03-14 12:24:02.077 -05:00 [INF] Exception of type 'CL.Server.Middleware.Error.CustomException' was thrown.
+2022-03-14 12:24:02.077 -05:00 [INF]    at CL.Server.Domain.Users.UsersManager.UserInfoData(UserLoginData user)
+   at ticket.Controllers.PersonsController.GetUserInfo(UserLoginData user) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\PersonsSystem\Controllers\PersonsController.cs:line 33
+   at lambda_method128(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Servidor.Web.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in G:\Ffylip\Archives\fresh\Hirings Double V Partners test 2\CL.Server.Middleware\Error\ExceptionMiddleware.cs:line 31
